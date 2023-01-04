@@ -8,7 +8,7 @@
 
 
 
-namespace win32ui {
+namespace aului {
 	template <typename T>
 	// Rectangle
 	struct Rectangle {
