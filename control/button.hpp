@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------------------
-//		Common Library of UI for Win32 Applications
+//		Common UI Library for AviUtl Plugins
 //		Header File (Button)
 //		made by mimaraka
 //----------------------------------------------------------------------------------
