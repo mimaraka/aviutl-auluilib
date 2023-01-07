@@ -1,19 +1,11 @@
 //----------------------------------------------------------------------------------
 //		Common UI Library for AviUtl Plugins
-//		Header File (Button)
+//		Header File (Common)
 //		made by mimaraka
 //----------------------------------------------------------------------------------
 
 #pragma once
 
-#include "window.hpp"
-
-
-
-namespace aului {
-    namespace control {
-        class Button {
-            
-        };
-    }
-}
+#include <windows.h>
+#include <stdlib.h>
+#include <vector>
