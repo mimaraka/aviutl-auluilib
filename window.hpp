@@ -17,7 +17,7 @@ namespace aului {
 		virtual LRESULT		wndproc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam);
 
 	public:
-        static constexpr int COMMAND_REDRAW = 0xffff;
+        static constexpr int WM_REDRAW = WM_APP;
 		HWND hwnd;
 
 		BOOL				create(
@@ -102,7 +102,7 @@ namespace aului {
     // Redraw
     inline void aului::Window::redraw() const
     {
-        ::PostMessage(hwnd, WM_COMMAND, COMMAND_REDRAW, 0);
+        ::PostMessage(hwnd, WM_REDRAW, 0, 0);
     }
 
     // Show

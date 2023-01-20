@@ -9,6 +9,7 @@
 #include "point.hpp"
 #include "rectangle.hpp"
 #include "window.hpp"
+#include "util.hpp"
 #include "control/button.hpp"
 #include "control/editbox.hpp"
-#include "directx/2d/d2dpaint.hpp"
+#include "directx/2d/paint.hpp"
