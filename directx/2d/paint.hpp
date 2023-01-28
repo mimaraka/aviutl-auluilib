@@ -7,6 +7,7 @@
 #pragma once
 
 #include "../../common.hpp"
+#include "../../color.hpp"
 #include <d2d1.h>
 
 #pragma comment(lib, "d2d1.lib")
@@ -30,7 +31,7 @@ namespace aului {
 
             bool init(HWND hw, ID2D1Factory* p_fctry, IDWriteFactory* p_wfctry);
             void exit();
-            bool d2d_setup(COLORREF cr);
+            bool d2d_setup(const Color& col);
             void resize();
 
             template <class Interface>
@@ -108,12 +109,12 @@ namespace aului {
 
 
     // Setup
-    inline bool Direct2d_Paint_Object::d2d_setup(COLORREF cr)
+    inline bool Direct2d_Paint_Object::d2d_setup(const Color& col)
     {
         if (is_safe(&p_render_target)) {
             p_render_target->BeginDraw();
             p_render_target->SetTransform(D2D1::Matrix3x2F::Identity());
-            p_render_target->Clear(D2D1::ColorF(cr));
+            p_render_target->Clear(D2D1::ColorF(col.d2dcolor()));
             p_render_target->EndDraw();
             return true;
         }

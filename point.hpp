@@ -38,4 +38,10 @@ namespace aului {
 	{
 		return std::sqrt(std::pow(pt2.x - pt1.x, 2) + std::pow(pt2.y - pt1.y, 2));
 	}
+
+	template <class Pt>
+	inline double distance(const Pt& pt1, const Pt& pt2)
+	{
+		return std::sqrt(std::pow(pt2.x - pt1.x, 2) + std::pow(pt2.y - pt1.y, 2));
+	}
 }

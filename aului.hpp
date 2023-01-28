@@ -7,6 +7,7 @@
 #pragma once
 
 #include "point.hpp"
+#include "color.hpp"
 #include "rectangle.hpp"
 #include "window.hpp"
 #include "util.hpp"
