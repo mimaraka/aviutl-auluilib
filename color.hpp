@@ -45,7 +45,7 @@ namespace aului {
             };
         }
 
-        Color(int _r = 0, int _g = 0, int _b = 0) :
+        inline Color(int _r = 0, int _g = 0, int _b = 0) :
             r(_r), g(_g), b(_b)
         {}
 

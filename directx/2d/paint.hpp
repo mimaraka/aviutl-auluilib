@@ -24,13 +24,14 @@ namespace aului {
             Direct2d_Paint_Object() :
                 p_render_target(nullptr),
                 p_factory(nullptr),
+                p_write_factory(nullptr),
                 brush(nullptr),
                 hwnd(NULL),
                 rect({ NULL })
             {}
 
-            bool init(HWND hw, ID2D1Factory* p_fctry, IDWriteFactory* p_wfctry);
-            void exit();
+            virtual bool init(HWND hw, ID2D1Factory* p_fctry, IDWriteFactory* p_wfctry);
+            virtual void exit();
             bool d2d_setup(const Color& col);
             void resize();
 
