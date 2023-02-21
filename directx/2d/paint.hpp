@@ -6,11 +6,8 @@
 
 #pragma once
 
-#include "../../common.hpp"
+#include "common.hpp"
 #include "../../color.hpp"
-#include <d2d1.h>
-
-#pragma comment(lib, "d2d1.lib")
 
 
 
@@ -32,7 +29,6 @@ namespace aului {
 
             virtual bool init(HWND hw, ID2D1Factory* p_fctry, IDWriteFactory* p_wfctry);
             virtual void exit();
-            bool d2d_setup(const Color& col);
             void resize();
 
             template <class Interface>
@@ -41,6 +37,7 @@ namespace aului {
         protected:
             ID2D1Factory* p_factory;
             IDWriteFactory* p_write_factory;
+            IWICImagingFactory* p_image_factory;
             HWND hwnd;
 
             template <class Interface>
@@ -106,21 +103,6 @@ namespace aului {
         };
         if (p_render_target != nullptr)
             p_render_target->Resize(pixel_size);
-    }
-
-
-    // Setup
-    inline bool Direct2d_Paint_Object::d2d_setup(const Color& col)
-    {
-        if (is_safe(&p_render_target)) {
-            p_render_target->BeginDraw();
-            p_render_target->SetTransform(D2D1::Matrix3x2F::Identity());
-            p_render_target->Clear(D2D1::ColorF(col.d2dcolor()));
-            p_render_target->EndDraw();
-            return true;
-        }
-        else
-            return false;
     }
 
 

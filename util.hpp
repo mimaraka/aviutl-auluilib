@@ -17,4 +17,24 @@ namespace aului {
 		else
 			return false;
 	}
+
+
+	inline std::vector<std::string> split(const std::string& s, TCHAR c)
+	{
+		std::vector<std::string> elems;
+		std::string item;
+		for (TCHAR ch : s) {
+			if (ch == c) {
+				if (!item.empty()) {
+					elems.emplace_back(item);
+					item.clear();
+				}
+			}
+			else item += ch;
+		}
+		if (!item.empty())
+			elems.emplace_back(item);
+
+		return elems;
+	}
 }

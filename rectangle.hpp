@@ -16,6 +16,13 @@ namespace aului {
 	struct Rectangle {
 		T left, top, right, bottom;
 
+		inline Rectangle(T l=0, T t=0, T r=0, T b=0) :
+			left(l),
+			top(t),
+			right(r),
+			bottom(b)
+		{}
+
 		template <typename U>
 		void convert_to(Rectangle<U>* r)
 		{
